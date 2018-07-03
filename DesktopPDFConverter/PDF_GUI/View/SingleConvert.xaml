@@ -1,0 +1,19 @@
+﻿<Window x:Class="PDF_GUI.View.SingleConvert"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SingleConvert" Height="225" Width="519" ResizeMode="CanMinimize" Icon="/PDF_GUI;component/Content/pdfconverterlogo.ico">
+    <Grid>
+        <Button Content="Source path" Command="{Binding Path = GetPathFrom}" HorizontalAlignment="Left" Margin="6,97,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button Content="Target path" Command="{Binding Path = GetPathTo}" HorizontalAlignment="Left" Margin="6,124,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button HorizontalAlignment="Left" Command="{Binding Path = ConvertToPdf}" VerticalAlignment="Top" Width="497" Margin="6,151,0,0" Height="27" Content="Convert"/>
+        <TextBlock HorizontalAlignment="Left" Margin="192,38,0,0" TextWrapping="Wrap" Text="Convert file" VerticalAlignment="Top" Height="37" Width="134" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Text="{Binding Path = SourcePath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="150,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" Height="22"/>
+        <TextBlock HorizontalAlignment="Left" Text="{Binding Path = TargetPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="150,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" Height="22"/>
+        <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="513">
+            <MenuItem Height="25" Width="50" Header="File" >
+                <MenuItem Header="Close application" Height="25" Margin="0,0,-3,0" Command="{Binding Path = CloseApplication}"/>
+                <MenuItem Header="Main menu" Height="25" Margin="0,0,-3,0" Command="{Binding Path = GoToMainMenu}"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window> 
